@@ -28,7 +28,7 @@ public class LoreCommand implements CommandExecutor {
 		}
 
 		// Check for permission
-		if (!(sender.hasPermission("iname.command.lore"))) {
+		if (!(sender.hasPermission("name.command.lore"))) {
 			sender.sendMessage(Messages.NO_PERM);
 			return true;
 		}
@@ -37,13 +37,13 @@ public class LoreCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		// Check for item in hand
-		if (player.getItemInHand().getType() == Material.AIR) {
+		if (player.getInventory().getItemInMainHand().getType() == Material.AIR) {
 			player.sendMessage(Messages.NOT_HOLDING_ANYTHING);
 			return true;
 		}
 
 		// Create second object
-		ItemStack stack = player.getItemInHand();
+		ItemStack stack = player.getInventory().getItemInMainHand();
 
 		// Check for first argument
 		if (args.length < 1) {
