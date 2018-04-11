@@ -1,2 +1,2 @@
-# iName
-A Bukkit/Spigot plugin for minecraft servers
+# Name
+A simple item renaming plugin for Minecraft servers
